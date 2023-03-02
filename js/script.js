@@ -95,6 +95,7 @@ function imagenPokemon(){
 }
 
 //Tomando los elementos de la barra para buscar
+let wraperinos = document.querySelector(".wrapper");
 let searchWrapper = document.querySelector(".search-input");
 let inputBox = searchWrapper.querySelector("input");
 let suggBox = searchWrapper.querySelector('.autocom-box');
@@ -111,8 +112,8 @@ let alturaPokedex = envoltorioPokedex.querySelector(".altura");
 let pesoPokedex = envoltorioPokedex.querySelector(".peso");
 let habitadPokedex = envoltorioPokedex.querySelector(".habitad");
 
-//Aqui se ponen los eventos necesarios para el funcionamiento
 inputBox.addEventListener('input', cambio);
+
 inputBox.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         buscarEnListaDePokemons()
@@ -122,8 +123,25 @@ inputBox.addEventListener('keypress', function (e) {
 buscarBtn.addEventListener('click', buscarEnListaDePokemons);
 
 
-function cambio(){
-    console.log(inputBox.value);
+async function cambio(){
+    let valor = inputBox.value.toLocaleLowerCase();
+    let arreglo = []
+    if(valor == ""){
+        suggBox.innerHTML = "";
+        return
+    }
+    let arrayVacio = await mostrarPokemon;
+    for(let i = 0; i < 1010; i++){
+        
+        if(arrayVacio[i].name.includes(valor)){
+            arreglo.push(`<li>${arrayVacio[i].name}</li>`);
+        }
+
+    };
+    /* inputBox.classList.add("showSuggBar"); */
+    listaSugerida = arreglo.join('');
+    suggBox.innerHTML = listaSugerida;
+    /* wraperinos.classList.add("active"); */
 }
 
 

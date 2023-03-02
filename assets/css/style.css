@@ -21,9 +21,18 @@ body {
 .wrapper .search-input {
   position: relative;
   background-color: white;
-  width: 50%;
-  border-radius: 5px;
+  width: 25%;
   box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  /*         .active {
+              .autocom-box{
+                  padding: 10px 8px;
+
+                  li {
+                      display: block;
+                  }
+              }
+
+          } */
 }
 .wrapper .search-input input {
   height: 25px;
@@ -32,7 +41,7 @@ body {
   border: none;
   border-radius: 5px;
   padding: 0 15px 0 20px;
-  font-size: 80%;
+  font-size: 1.5vw;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
 }
 .wrapper .search-input .icon {
@@ -51,33 +60,46 @@ body {
   background-color: rgb(0, 0, 0);
   color: white;
 }
+.wrapper .search-input .autocom-box {
+  padding: 0px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 1;
+}
 .wrapper * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.wrapper ul {
-  list-style: none;
-}
 
 .autocom-box {
-  /* padding: 10px 8px; */
-  max-height: 280px;
-  overflow-y: auto;
-  opacity: 0;
-  pointer-events: none;
+  position: absolute;
+  background-color: white;
+  justify-content: center;
+  width: 100%;
 }
 .autocom-box li {
+  list-style: none;
   padding: 8px 12px;
   width: 100%;
   cursor: default;
   border-radius: 3px;
+  font-size: 80%;
+}
+.autocom-box li .inactive {
   display: none;
 }
 .autocom-box li:hover {
   background-color: rgba(198, 198, 198, 0.4352941176);
 }
 
+/* .DontShowSuggBar{
+    border-radius: 5px;
+}
+
+.showSuggBar {
+    border-radius: 5px 5px 0px 0px;
+} */
 .wraper-pokedex {
   display: grid;
   width: 50%;
@@ -100,8 +122,8 @@ body {
   text-align: center;
   margin: 10px 0 0 0;
   max-width: 200px;
-  max-height: 100px;
   width: 50%;
+  height: 110px;
   background-color: azure;
   border-radius: 10px 10px 0 0;
 }
@@ -110,4 +132,5 @@ body {
   height: 100px;
   background-color: rgb(87, 87, 119);
   border-radius: 50%;
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
