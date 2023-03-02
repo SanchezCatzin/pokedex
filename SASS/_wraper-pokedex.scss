@@ -1,0 +1,20 @@
+.wraper-pokedex{
+    display: grid;
+    width: 50%;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    text-align: left;
+    margin: 5%;
+
+    img{
+        grid-column: 1/3;
+        padding: 0 10%;
+        background-color: blue;
+        border-radius: 40%;
+    };
+
+    .numero {
+        width: 10%;
+    }
+};
+
