@@ -101,8 +101,9 @@ let suggBox = searchWrapper.querySelector('.autocom-box');
 let buscarBtn = searchWrapper.querySelector('.icon')
 
 //Tomando elementos para cambiar por stats de pokedex
+let envoltorioImgPokedex = document.querySelector('.wraper-img');
+let imgPokedex = envoltorioImgPokedex.querySelector("img");
 let envoltorioPokedex = document.querySelector('.wraper-pokedex');
-let imgPokedex = envoltorioPokedex.querySelector("img");
 let numPokedex = envoltorioPokedex.querySelector(".numero");
 let namePokedex = envoltorioPokedex.querySelector(".nombre");
 let typosPokedex = envoltorioPokedex.querySelector(".tipo");
