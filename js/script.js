@@ -114,16 +114,33 @@ let habitadPokedex = envoltorioPokedex.querySelector(".habitad");
 
 inputBox.addEventListener('input', cambio);
 
-inputBox.addEventListener('keypress', function (e) {
+inputBox.addEventListener('keydown', function (e) {
+    
+    /* if(){}; */
+
     if (e.key === 'Enter') {
         buscarEnListaDePokemons()
-    }
+        suggBox.innerHTML = "";
+        inputBox.classList.remove("active");
+    };
+
+    if(e.key === 'ArrowDown'){
+        console.log("arrowdown");
+    };
+
+    if(e.key == 'ArrowUp'){
+        console.log("arrowup");
+    };
 });
 
 /* inputBox.addEventListener('change', cambio) */
 
 
-buscarBtn.addEventListener('click', buscarEnListaDePokemons);
+buscarBtn.addEventListener('click', () => {
+    buscarEnListaDePokemons();
+    inputBox.classList.remove("active");
+    suggBox.innerHTML = "";
+});
 
 
 async function cambio(){
@@ -135,26 +152,15 @@ async function cambio(){
         return
     }
     let arrayVacio = await mostrarPokemon;
-    for(let i = 0; i < 1010; i++){
-        
-        if(arrayVacio[i].name.includes(valor)){
-            arreglo.push(`<li>${arrayVacio[i].name}</li>`);
-        }
-
-    };
+    
+    let arreglo1 = hacerListaSugerencia(arrayVacio,arreglo,valor);
+    
     inputBox.classList.add("active");
-    listaSugerida = arreglo.join('');
+    listaSugerida = arreglo1.join('');
     suggBox.innerHTML = listaSugerida;    
+    
     agregarListenerParaClick()
 
-/*     let busquedaPokemon = suggBox.getElementsByTagName("li");
-    console.log (suggBox.getElementsByTagName("li"));
-        for(let i= 0; i < busquedaPokemon.length; i ++ ){
-            busquedaPokemon[i].addEventListener('click', e => {
-            inputBox.value = e.target.innerHTML;
-            cambio();
-        })    
-    } */
 };
 
 function agregarListenerParaClick() {
@@ -162,11 +168,15 @@ function agregarListenerParaClick() {
         for(let i= 0; i < busquedaPokemon.length; i ++ ){
             busquedaPokemon[i].addEventListener('click', e => {
             inputBox.value = e.target.innerHTML;
+            suggBox.innerHTML = "";
+            inputBox.classList.remove("active");
+            buscarEnListaDePokemons();
         })    
     }
 }
 
-/* function hacerListaSugerencia(array, array1, valor){
+
+function hacerListaSugerencia(array, array1, valor){
     for(let i = 0; i < 1010; i++){
         
         if(array[i].name.includes(valor)){
@@ -174,4 +184,4 @@ function agregarListenerParaClick() {
         }
     };
     return array1
-} */
+}
