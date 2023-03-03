@@ -12,7 +12,75 @@ body{
     background-color: rgb(170, 170, 243);
 }
 
-.wrapper{
+.wraper{
+    display: flex;
+    justify-content: center;
+
+};
+
+.search-input{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+};
+
+.autocom-box{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    max-height: 130px;
+    position: absolute;
+    overflow-y: auto;
+};
+
+input{
+    width: 95%;
+    padding: 0px 0px 0px 5%;
+    margin: 0;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+};
+
+.icon {
+    position: absolute;
+    line-height: 25px;
+    height: 25px;
+    top: 0;
+    right: 0;
+    padding: 0px 5px;
+    border-radius: 5px;
+
+    &:active{
+        background-color: rgba($color: #000000, $alpha: 1.0);
+        color: white;
+    }
+};
+
+
+li {
+    list-style: none;
+    padding:5px 0px 0px 5px;
+    border-radius: 5px;
+    
+
+    &:hover {
+        background-color: aquamarine;
+    };
+};
+
+.active{
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* .wrapper{
     display: flex;
     justify-content: center;
     width: 100%;
@@ -20,7 +88,7 @@ body{
 
     .search-input{
         position: relative;
-        background-color: white;
+        background-color: transparent
         width: 25%;
         box-shadow: 0px 1px 5px 3px rgba($color: #000000, $alpha: 0.12);
 
@@ -54,17 +122,6 @@ body{
             }
             
         };
-
-/*         .active {
-            .autocom-box{
-                padding: 10px 8px;
-                
-                li {
-                    display: block;
-                }
-            }
-
-        } */
 
         .autocom-box{
             padding: 0px;
@@ -105,7 +162,7 @@ body{
             background-color: #c6c6c66f;
         }
     }
-}
+} */
 
 /* .DontShowSuggBar{
     border-radius: 5px;

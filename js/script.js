@@ -120,11 +120,15 @@ inputBox.addEventListener('keypress', function (e) {
     }
 });
 
+/* inputBox.addEventListener('change', cambio) */
+
+
 buscarBtn.addEventListener('click', buscarEnListaDePokemons);
 
 
 async function cambio(){
     let valor = inputBox.value.toLocaleLowerCase();
+    inputBox.classList.remove("active")
     let arreglo = []
     if(valor == ""){
         suggBox.innerHTML = "";
@@ -138,11 +142,36 @@ async function cambio(){
         }
 
     };
-    /* inputBox.classList.add("showSuggBar"); */
+    inputBox.classList.add("active");
     listaSugerida = arreglo.join('');
-    suggBox.innerHTML = listaSugerida;
-    /* wraperinos.classList.add("active"); */
+    suggBox.innerHTML = listaSugerida;    
+    agregarListenerParaClick()
+
+/*     let busquedaPokemon = suggBox.getElementsByTagName("li");
+    console.log (suggBox.getElementsByTagName("li"));
+        for(let i= 0; i < busquedaPokemon.length; i ++ ){
+            busquedaPokemon[i].addEventListener('click', e => {
+            inputBox.value = e.target.innerHTML;
+            cambio();
+        })    
+    } */
+};
+
+function agregarListenerParaClick() {
+    let busquedaPokemon = suggBox.getElementsByTagName("li");
+        for(let i= 0; i < busquedaPokemon.length; i ++ ){
+            busquedaPokemon[i].addEventListener('click', e => {
+            inputBox.value = e.target.innerHTML;
+        })    
+    }
 }
 
-
-
+/* function hacerListaSugerencia(array, array1, valor){
+    for(let i = 0; i < 1010; i++){
+        
+        if(array[i].name.includes(valor)){
+            array1.push(`<li>${array[i].name}</li>`);
+        }
+    };
+    return array1
+} */

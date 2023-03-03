@@ -12,87 +12,152 @@ body {
   background-color: rgb(170, 170, 243);
 }
 
-.wrapper {
+.wraper {
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: auto;
 }
-.wrapper .search-input {
+
+.search-input {
   position: relative;
-  background-color: white;
-  width: 25%;
-  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-  /*         .active {
-              .autocom-box{
-                  padding: 10px 8px;
-
-                  li {
-                      display: block;
-                  }
-              }
-
-          } */
-}
-.wrapper .search-input input {
-  height: 25px;
-  width: 100%;
-  outline: none;
-  border: none;
+  background-color: rgba(0, 0, 0, 0.12);
   border-radius: 5px;
-  padding: 0 15px 0 20px;
-  font-size: 1.5vw;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
-}
-.wrapper .search-input .icon {
-  color: rgb(0, 0, 0);
-  border-radius: 5px;
-  text-align: center;
-  height: 25px;
-  width: 25px;
-  line-height: 25px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-}
-.wrapper .search-input .icon:active {
-  background-color: rgb(0, 0, 0);
-  color: white;
-}
-.wrapper .search-input .autocom-box {
-  padding: 0px;
-  max-height: 280px;
-  overflow-y: auto;
-  opacity: 1;
-}
-.wrapper * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .autocom-box {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 0px 5px 5px;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  max-height: 130px;
   position: absolute;
-  background-color: white;
-  justify-content: center;
-  width: 100%;
-}
-.autocom-box li {
-  list-style: none;
-  padding: 8px 12px;
-  width: 100%;
-  cursor: default;
-  border-radius: 3px;
-  font-size: 80%;
-}
-.autocom-box li .inactive {
-  display: none;
-}
-.autocom-box li:hover {
-  background-color: rgba(198, 198, 198, 0.4352941176);
+  overflow-y: auto;
 }
 
+input {
+  width: 95%;
+  padding: 0px 0px 0px 5%;
+  margin: 0;
+  height: 25px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+}
+
+.icon {
+  position: absolute;
+  line-height: 25px;
+  height: 25px;
+  top: 0;
+  right: 0;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+.icon:active {
+  background-color: black;
+  color: white;
+}
+
+li {
+  list-style: none;
+  padding: 5px 0px 0px 5px;
+  border-radius: 5px;
+}
+li:hover {
+  background-color: aquamarine;
+}
+
+.active {
+  border-radius: 5px 5px 0px 0px;
+}
+
+/* .wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+    .search-input{
+        position: relative;
+        background-color: transparent
+        width: 25%;
+        box-shadow: 0px 1px 5px 3px rgba($color: #000000, $alpha: 0.12);
+
+        input{
+            height: $bar-size;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 0 15px 0 20px;
+            font-size: 1.5vw;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+
+        };
+
+        .icon{
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            text-align: center;
+            height: $bar-size;
+            width: 25px;
+            line-height: $line-altura;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+
+            &:active{
+                background-color: rgba(0, 0, 0, 1);
+                color:white;
+            }
+
+        };
+
+        .autocom-box{
+            padding: 0px;
+            max-height: 280px;
+            overflow-y: auto;
+            opacity: 1;
+        }
+
+    };
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+}
+
+.autocom-box{
+    position: absolute;
+    background-color: white;
+    justify-content: center;
+    width: 100%;
+
+    li{
+        list-style: none;
+        padding: 8px 12px;
+        width: 100%;
+        cursor: default;
+        border-radius: 3px;
+
+        .inactive{
+            display: none;
+        }
+
+        font-size: 80%;
+        &:hover{
+            background-color: #c6c6c66f;
+        }
+    }
+} */
 /* .DontShowSuggBar{
     border-radius: 5px;
 }
@@ -114,7 +179,7 @@ body {
 .wraper-pokedex .numero {
   grid-column: 1/3;
 }
-.wraper-pokedex * {
+.wraper-pokedex > * {
   padding: 5px;
 }
 
