@@ -1,33 +1,5 @@
-/* let pokemonimg = document.getElementsByClassName("img")[0];
-var obj = {} */
-/* let pokemonIngresado = prompt("Ingresa Pokemon");
-
-let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIngresado}/`;
-
-let pokemon = fetch(pokemonUrl).then(
-    respuesta => respuesta.json()
-).then(
-    data => {console.log(data.sprites.front_default);
-    let srcImagenPokemon = data.sprites.front_default
-    pokemonimg.setAttribute('src', srcImagenPokemon)
-}) */
-
-
+//Se toman todos los pokemons desde la api
 let listaPokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-
-/* function mostrarPokemon(pokemonABuscar){
-    fetch(listaPokemonUrl).then(
-        respuesta => respuesta.json()).then(
-            data => {
-                let arrayPokemons = data.results;
-                for (let i = 0; i < arrayPokemons.length; i++ ){
-                    if(pokemonABuscar == arrayPokemons[i].name){
-                        let pokemonUrl = arrayPokemons[i]
-                        return pokemonUrl
-                    }
-                }
-            })
-} */
 
 // Buscar la lista de pokemons
 let mostrarPokemon = fetch(listaPokemonUrl).then(
